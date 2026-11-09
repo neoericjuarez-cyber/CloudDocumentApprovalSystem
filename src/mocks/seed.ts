@@ -1,6 +1,7 @@
-import type { LoadRevisionPermit, RequestItem } from "@/types";
+import type { LoadRevisionPermit } from "@/types";
 
-// Temporary mock data from the Figma export. Replaced by API calls as the backend comes online.
+// Starting values for the permit form (the example subjects from the Figma design).
+// Requests themselves now come from the API.
 export const defaultPermit: LoadRevisionPermit = {
   term: "2nd Semester",
   schoolYear: "2024–2025",
@@ -24,16 +25,3 @@ export const defaultPermit: LoadRevisionPermit = {
   studentSignature: "Andrea M. Santos",
   signatures: { Adviser: "Prof. Ramon C. Flores" },
 };
-
-export const requestsSeed: RequestItem[] = [
-  { id: "IIT-2025-1048", type: "Load Revision Form", student: "Andrea M. Santos", date: "May 22, 2025", stage: "College Dean", status: "Pending" },
-  { id: "IIT-2025-1031", type: "Leave of Absence Form", student: "Andrea M. Santos", date: "May 18, 2025", stage: "Final Approval", status: "Approved" },
-  { id: "IIT-2025-0987", type: "Shifter's Application Form", student: "Andrea M. Santos", date: "May 08, 2025", stage: "Student Revision", status: "Returned for Revision", reason: "Please attach a clearer statement explaining your intended program." },
-  { id: "IIT-2025-0912", type: "Load Revision Form", student: "Andrea M. Santos", date: "Apr 27, 2025", stage: "Completed", status: "Completed" },
-];
-
-export const approvalQueue: RequestItem[] = [
-  { id: "IIT-2025-1056", type: "Leave of Absence Form", student: "Miguel A. Ramos", date: "May 24, 2025", stage: "Department Chair", status: "Pending" },
-  { id: "IIT-2025-1052", type: "Load Revision Form", student: "Patricia L. Cruz", date: "May 23, 2025", stage: "Department Chair", status: "Pending" },
-  { id: "IIT-2025-1048", type: "Load Revision Form", student: "Andrea M. Santos", date: "May 22, 2025", stage: "Department Chair", status: "Pending" },
-];

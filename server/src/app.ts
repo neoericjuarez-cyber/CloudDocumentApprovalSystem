@@ -4,6 +4,9 @@ import { env } from "./config/env";
 import { pool } from "./lib/db";
 import { errorHandler } from "./middleware/errorHandler";
 import { authRouter } from "./modules/auth/auth.routes";
+import { notificationsRouter } from "./modules/notifications/notifications.routes";
+import { requestsRouter } from "./modules/requests/requests.routes";
+import { signaturesRouter } from "./modules/signatures/signatures.routes";
 
 export function createApp() {
   const app = express();
@@ -21,8 +24,9 @@ export function createApp() {
   });
 
   app.use("/api/auth", authRouter);
-  // More routers get mounted here as they are built, e.g.
-  //   app.use("/api/requests", requestsRouter);
+  app.use("/api/requests", requestsRouter);
+  app.use("/api/notifications", notificationsRouter);
+  app.use("/api/signature", signaturesRouter);
 
   app.use("/api", (_req, res) => { res.status(404).json({ error: "Not found" }); });
 
